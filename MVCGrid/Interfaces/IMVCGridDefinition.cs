@@ -148,7 +148,6 @@ namespace MVCGrid.Interfaces
         /// </summary>
         AuthorizationType AuthorizationType { get; set; }
 
-
         /// <summary>
         /// The list of configured rendering engines availble for this grid
         /// </summary>
@@ -164,5 +163,10 @@ namespace MVCGrid.Interfaces
         /// The default name of the rendering engine.
         /// </value>
         string DefaultRenderingEngineName { get; set; }
+
+        /// <summary>
+        /// Changes method used to update grid data to post. It disables browser history feature. 
+        /// </summary>
+        bool UsePost { get; set; }
     }
 }

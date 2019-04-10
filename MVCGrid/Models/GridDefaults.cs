@@ -38,11 +38,11 @@ namespace MVCGrid.Models
             AllowChangingPageSize = false;
             MaxItemsPerPage = null;
             AuthorizationType = Models.AuthorizationType.AllowAnonymous;
-
             RenderingEngines = new ProviderSettingsCollection();
             RenderingEngines.Add(new ProviderSettings("BootstrapRenderingEngine", "MVCGrid.Rendering.BootstrapRenderingEngine, MVCGrid"));
             RenderingEngines.Add(new ProviderSettings("Export", "MVCGrid.Rendering.CsvRenderingEngine, MVCGrid"));
             DefaultRenderingEngineName = "BootstrapRenderingEngine";
+            UsePost = false;
         }
 
         public bool PreloadData { get; set; }
@@ -116,5 +116,7 @@ namespace MVCGrid.Models
 
         public ProviderSettingsCollection RenderingEngines { get; set; }
         public string DefaultRenderingEngineName { get; set; }
+
+        public bool UsePost { get; set; }
     }
 }

@@ -56,12 +56,12 @@ namespace MVCGrid.Models
             this.AllowChangingPageSize = gridDefaults.AllowChangingPageSize;
             this.MaxItemsPerPage = gridDefaults.MaxItemsPerPage;
             this.AuthorizationType = gridDefaults.AuthorizationType;
-
             this.RenderingEngines = gridDefaults.RenderingEngines;
             this.DefaultRenderingEngineName = gridDefaults.DefaultRenderingEngineName;
-        }
+            this.UsePost = gridDefaults.UsePost;
+    }
 
-        [Obsolete("RenderingEngine is obsolete. Please user RenderingEngines and DefaultRenderingEngineName")]
+    [Obsolete("RenderingEngine is obsolete. Please user RenderingEngines and DefaultRenderingEngineName")]
         public Type RenderingEngine
         {
             get
@@ -356,6 +356,11 @@ namespace MVCGrid.Models
 
         public ProviderSettingsCollection RenderingEngines { get; set; }
         public string DefaultRenderingEngineName { get; set; }
+
+        /// <summary>
+        /// Changes method used to update grid data to post. It disables browser history feature. 
+        /// </summary>
+        public bool UsePost { get; set; }
     }
 
 }

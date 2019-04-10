@@ -430,7 +430,6 @@ namespace MVCGrid.Models
             return this;
         }
 
-
         /// <summary>
         /// Text to display on the "next" button.
         /// </summary>
@@ -474,7 +473,16 @@ namespace MVCGrid.Models
         /// <returns></returns>
         public MVCGridBuilder<T1> WithProcessingMessage(string processingMessage)
         {
-            GridDefinition.ProcessingMessage = processingMessage;
+          GridDefinition.ProcessingMessage = processingMessage;
+          return this;
+        }
+
+        /// <summary>
+        /// Changes method used to update grid data to post. It disables browser history feature. 
+        /// </summary>
+        public MVCGridBuilder<T1> WithUsePost(bool usesPost)
+        {
+            GridDefinition.UsePost = usesPost;
             return this;
         }
     }
